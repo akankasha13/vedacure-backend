@@ -8,6 +8,7 @@ const {
   userDetailsController,
   userUpdateController,
 } = require("../controllers/userController");
+const { genController } = require("../controllers/genController");
 
 const apiRouter = Router();
 
@@ -20,6 +21,8 @@ apiRouter.post("/login", loginController);
 
 apiRouter.get("/user/details", authenticateToken, userDetailsController);
 apiRouter.post("/user/update", authenticateToken, userUpdateController);
+
+apiRouter.post("/gen/generate", authenticateToken, genController);
 
 apiRouter.post("/token-test", authenticateToken, (req, res) =>
   res.json({ status: 200, message: "JWT is working" })

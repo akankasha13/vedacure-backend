@@ -29,6 +29,7 @@ async function createUser(
     return true;
   } catch (error) {
     // throw error;
+    console.log(error);
     return false;
   }
 }
@@ -41,6 +42,7 @@ async function getUserByEmail(email) {
     return rows[0];
   } catch (error) {
     // throw new Error(`User does not exist with email ${email}`);
+    console.log(error);
     return false;
   }
 }
@@ -54,6 +56,7 @@ async function getUserByUsername(username) {
     return rows[0];
   } catch (error) {
     // throw new Error(`User does not exist with username ${username}`);
+    console.log(error);
     return false;
   }
 }
@@ -67,6 +70,7 @@ async function getUserById(id) {
     return rows[0];
   } catch (error) {
     // throw new Error(`User does not exist with id ${id}`);
+    console.log(error);
     return false;
   }
 }
@@ -79,6 +83,7 @@ async function updateUser(id, fullName, email, age, weight, height) {
     );
     return true;
   } catch (error) {
+    console.log(error);
     return false;
   }
 }
@@ -91,6 +96,7 @@ async function updateUserCalories(id, calories_burnt_today) {
     );
     return true;
   } catch (error) {
+    console.log(error);
     return false;
   }
 }
